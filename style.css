@@ -1,0 +1,145 @@
+/* Reset default margin and padding for the entire document */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a gradient background to the body */
+body {
+    background: linear-gradient(to bottom, #2980b9, #3498db); /* Replace with your preferred colors */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Hide overflow to prevent horizontal scrollbars */
+}
+
+/* Weather container styles */
+.box {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 40px;
+    width: 350px; /* Increase the width */
+    position: relative;
+    overflow: hidden; /* Hide overflow for child elements */
+}
+
+/* Weather icon styles */
+#weathercon {
+    font-size: 64px;
+    color: #eccc68;
+    margin-bottom: 20px;
+    animation: rotateIcon 10s linear infinite; /* Rotate the sun icon */
+}
+
+@keyframes rotateIcon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Location text styles */
+.location {
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.location i {
+    margin-right: 10px;
+}
+
+/* Date and time styles */
+#date {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px; /* Increase the margin */
+}
+
+/* Temperature styles */
+.temp {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 10px; /* Adjust the margin */
+}
+
+/* Temperature min/max styles */
+.tempmin_max {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+}
+  /* Add your custom CSS here */
+  body {
+    background: linear-gradient(to bottom, #add8e6, #87ceeb); /* Light blue gradient */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.box {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+    margin: 20px auto;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.wave-one,
+.wave-two,
+.wave-three {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: rgba(173, 216, 230, 0.3); /* Light blue color */
+    transform-origin: bottom;
+    transform: rotate(0deg);
+    animation: animate 20s linear infinite;
+}
+
+.wave-two {
+    height: 150px;
+    background: rgba(173, 216, 230, 0.2); /* Light blue color */
+    animation: animate2 15s linear infinite;
+}
+
+.wave-three {
+    height: 200px;
+    background: rgba(173, 216, 230, 0.1); /* Light blue color */
+    animation: animate3 10s linear infinite;
+}
+
+#weathercon {
+    font-size: 3rem;
+    margin-top: 20px;
+}
+
+.location {
+    font-size: 1.5rem;
+}
+
+#date {
+    font-size: 1rem;
+}
+
+.temp {
+    font-size: 3rem;
+    margin-top: 20px;
+}
+
+.tempmin_max {
+    font-size: 1rem;
+}

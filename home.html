@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet "href ="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Weather</title>
+    <style>
+        /* Add your custom CSS here */
+        body {
+            background: linear-gradient(to bottom, #add8e6, #87ceeb); /* Light blue gradient */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .box {
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 20px;
+            width: 300px;
+            text-align: center;
+            margin: 20px auto;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .wave-one,
+        .wave-two,
+        .wave-three {
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            background: rgba(173, 216, 230, 0.3); /* Light blue color */
+            transform-origin: bottom;
+            transform: rotate(0deg);
+            animation: animate 20s linear infinite;
+        }
+
+        .wave-two {
+            height: 150px;
+            background: rgba(173, 216, 230, 0.2); /* Light blue color */
+            animation: animate2 15s linear infinite;
+        }
+
+        .wave-three {
+            height: 200px;
+            background: rgba(173, 216, 230, 0.1); /* Light blue color */
+            animation: animate3 10s linear infinite;
+        }
+
+        #weathercon {
+            font-size: 3rem;
+            margin-top: 20px;
+        }
+
+        .location {
+            font-size: 1.5rem;
+        }
+
+        #date {
+            font-size: 1rem;
+        }
+
+        .temp {
+            font-size: 3rem;
+            margin-top: 20px;
+        }
+
+        .tempmin_max {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="wave-one"></div>
+        <div class="wave-two"></div>
+        <div class="wave-three"></div> 
+        <div id="weathercon">
+            <i class="fa-solid fa-sun" style="color: #eccc68"></i>
+        </div>
+
+        <div class="info">
+            <h2 class="location"><i class="fa-solid fa-street-view"></i>{%location%}, {%country%}</h2>
+            <p id="date"></p>
+            <h1 class="temp">{%tempval%}&#8451;</h1> <!-- Display temperature in Celsius -->
+            <h3 class="tempmin_max">Min {%tempmin%}&#8451; | Max {%tempmax%}&#8451;</h3> <!-- Display temperature in Celsius -->
+        </div>
+    </div>
+    <script>
+        const curDate = document.getElementById("date");
+        const tempStatus = "clouds";
+        const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        const getCurrentTime = () => {
+            const now = new Date();
+            const monthNames = [
+                'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+            ];
+            const month = monthNames[now.getMonth()];
+            const date = now.getDate();
+            const formattedDate = `${month} ${date}`;
+
+            curDate.textContent = `${weekday[now.getDay()]} | ${formattedDate} | ${now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true })}`;
+        };
+
+        getCurrentTime();
+    </script>
+</body>
+</html>
